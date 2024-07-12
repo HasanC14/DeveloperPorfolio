@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand&family=Space+Grotesk:wght@500&display=swap');
+*{
+  font-family: 'Space Grotesk', sans-serif;
+}
+body {
+  background: linear-gradient(to bottom, #022337, #092838);
+  height: max-content;
+}
+.bg-prime{
+  background: linear-gradient(to bottom, #022337, #092838);
+}
+.bg-second{
+  background-color: #FFD400;
+}
+.bg-footer{
+background-color: #F8F5F2;
+}
+.text-prime{
+  color: white;
+}
+.text-second{
+
+}
+.gradient-text {
+  background: linear-gradient(45deg, #087DC4, #1A86BC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 100;
+}
+.gradient-text2 {
+  background: linear-gradient(45deg, #249C7F, #4DCAA5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 100;
+}
+.gradient-btn {
+  background: linear-gradient(to bottom, #087DC4, #459ac5);
+  color: white;
+}
+.gradient-btn:hover {
+  background: linear-gradient(to top, #087DC4, #459ac5);
+  color: white;
+}
+.gradient-btn2 {
+  background: linear-gradient(to bottom, #249C7F, #4DCAA5);
+  color: white;
+}
+.gradient-btn2:hover {
+  background: linear-gradient(to top, #249C7F, #4DCAA5);
+  color: white;
+}
+.line-clamp-7 {
+  display: -webkit-box;
+  -webkit-line-clamp: 7; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* Scroll-Watcher */
+.scroll-watcher {
+  height: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #087DC4;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: scroll-watcher linear forwards; 
+  /* forwards deoa mane eta "keyframes to{}" te jeta deoa setai dhore rakhbe  */
+  animation-timeline: scroll();
+  }
+  @keyframes scroll-watcher {
+  to { 
+    transform: scaleX(1);
+    }
+  }
+
+  /* Image animation */
+  .image_animation {
+    scale:  .8;
+    opacity: 0;
+    animation:  fade_in linear forwards;
+    animation-timeline: view();
+    animation-range: 250px 500px;
+    /* Animation starts as soon as the scroll position is 500 pixels or more from the top of the viewport. */
+  }
+  @keyframes fade_in {
+    to { 
+      scale:  1;
+      opacity: 1;
+      }
+    }
+
+    
+ /* Loader Animation     */
+ .loader-wrapper {
+  animation: scaleUpDown 1s ease-in-out infinite;
+}
+@keyframes scaleUpDown {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+}   
+
+.bg_glass{
+  background: rgba( 35, 137, 188, 0.1 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.2 );
+  backdrop-filter: blur( 3px );
+  -webkit-backdrop-filter: blur( 3px );
+  border-radius: 10px;
+}
+
+.custom-border {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-border:hover {
+  border-color: rgba(0, 157, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 110, 255, 0.3);
+}
+.content {
+  max-height: 0;
+}
+.toggle:checked + .title + .content {
+  max-height: max-content;
+}
+.toggle:checked + .title::before {
+  transform: rotate(90deg) !important;
+}
+.card{
+  overflow: hidden;
+}
+.card::before{
+  content: '';
+  position: absolute;
+  top: -2.5%;
+  left: -2.5%;
+  width: 105%;
+  height: 105%;
+  /* border-radius: 1%; */
+  border-top: 2px solid #058ee4;
+  border-bottom: 2px solid #058ee4;
+  transform: scale(0, 1);
+  transition: all ease-in-out 250ms;
+}
+.card::after{
+  content: '';
+  position: absolute;
+  top: -2.5%;
+  left: -2.5%;
+  width: 105%;
+  height: 105%;
+  /* border-radius: 1%; */
+  border-left: 2px solid #058ee4;
+  border-right: 2px solid #058ee4;
+  transform: scale(1, 0);
+  transition: all ease-in-out 250ms;
+}
+
+.card:hover::before{
+  transform: scale(1, 1);
+}
+.card:hover::after{
+  transform: scale(1, 1);
+}

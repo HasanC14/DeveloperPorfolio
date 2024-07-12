@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/src/assets/images/download.svg" />
+  <link href="/src/css/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/cdn/swiper.css" />
+  <link rel="stylesheet" href="/cdn/jquery.css">
+  <script src="/src/js/tailwind3.3.3.js"></script>
+  <script src="/cdn/fontawsome.js" crossorigin="anonymous"></script>
+  <title>Portfolio</title>
+  <style>
+    /* .faq-container {
+        max-width: 600px;
+        margin: auto;
+      }
+  
+      .faq-question {
+        cursor: pointer;
+      } */
+
+    .faq-answer {
+      display: none;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+      max-height: 0;
+    }
+
+    .faq-answer.open {
+      display: block;
+      max-height: fit-content;
+      /* Adjust the max-height as needed */
+    }
+
+    .stack>div {
+      position: sticky;
+      top: 5%;
+      background: linear-gradient(to bottom, #022337, #092838);
+      padding: 2%;
+      border-radius: 2%;
+    }
+  </style>
+</head>
+
+<body class="">
+
+  <div class="flex justify-center items-center h-screen loader-wrapper bg-prime">
+    <img src="/src/assets/images/download.svg" alt="Loading..." class="animate-pulse max-w-xs">
+    <span class="sr-only">Loading...</span>
+  </div>
+
+  <!-- scroll-watcher -->
+  <div class="scroll-watcher"></div>
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center max-w-6xl mx-auto mt-4 lg:p-0 p-4">
+    <div><img src="/src/assets/images/download.svg" alt=""></div>
+    <div><button class="gradient-btn md:text-2xl text-xl px-8 py-3 rounded-md">Work with us</button></div>
+  </nav>
+  <button id="backToTopBtn">
+    <i class="fa-solid fa-circle-chevron-up"></i>
+  </button>
+
+  <!-- Main Content -->
+  <div class="max-w-5xl mx-auto lg:p-0 p-4">
+
+    <section class="">
+      <!-- Hero Text -->
+      <div class="lg:text-5xl md:text-3xl text-xl text-center lg:mt-40 md:mt-20 mt-10">
+        <div class="text-prime font-extrabold">Hire two world-class Laravel devs</div>
+        <div class="gradient-text">in less time than it takes to post on a job board.</div>
+      </div>
+      <!-- Hero Image -->
+      <div class="lg:w-[40rem] lg:h-[40rem] md:w-[30rem] md:h-[30rem] w-[18rem] h-[18rem] mx-auto"><img
+          src="/src/assets/images/us-olMC0EBT.webp" alt="" class="w-full h-full object-contain object-center"></div>
+    </section>
+
+    <section class="">
+      <!-- We keep it simple -->
+      <div class="text-prime font-extrabold lg:text-5xl md:text-3xl text-xl text-center mt-20">We keep it <span
+          class="gradient-text">simple</span></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+        <div
+          class="flex space-x-4 flex-col bg_glass p-10 custom-border hover:scale-105 transition-all ease-in-out duration-500">
+          <div class="flex space-x-2 text-white text-2xl">
+            <div><i class="fa-solid fa-file-signature"></i></div>
+            <div>No contracts</div>
+          </div>
+          <div class="text-gray-500">Cancel your subscription at any time (without paying unemployment)</div>
+        </div>
+        <div
+          class="flex space-x-4 flex-col bg_glass p-10 custom-border hover:scale-105 transition-all ease-in-out duration-500">
+          <div class="flex space-x-2 text-white text-2xl">
+            <div><i class="fa-solid fa-handshake-slash"></i></div>
+            <div>No meetings</div>
+          </div>
+          <div class="text-gray-500">Communication is streamlined and centralized in GitHub. Everyone can see at a
+            glance what we're working on and what we've shipped.</div>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto text-center text-xl">
+        <div class="text-white font-bold">Have a slow month, or going on vacation?</div>
+        <div class="text-gray-500">Pause the subscription, use the rest of your paused month when you return. We'll even
+          send you a reminder 5 days before renewal to make sure you really want to renew.</div>
+      </div>
+    </section>
+
+    <section class="">
+      <!-- Review -->
+      <div class="flex md:space-x-4 space-x-0 md:my-40 my-20 md:flex-row flex-col">
+        <div class="md:w-1/5 w-full flex justify-center items-center"><img src="/src/assets/images/quote-UWYCf-2H.svg"
+            alt="" class="w-20 h-20"></div>
+        <div class="md:w-4/5 w-full flex flex-col space-y-4 border-l-2 border-[#087DC4] md:px-10 px-2">
+          <div class="line-clamp-4 md:text-xl text-sm text-gray-400 text-justify">To be honest, we weren't exactly sure
+            what to expect, but Joel and Aaron provided a tremendous amount of value. Their years of industry knowledge
+            in the Laravel world is impressive and our team is excited to take what we learned and continue to build our
+            platform.</div>
+          <div class="flex space-x-4">
+            <div><img src="src/assets/images/anthony-blGeGDqd.jpg" alt=""
+                class="md:w-20 w-10 h-10 md:h-20 rounded-full"></div>
+            <div class="flex flex-col space-y-1 md:text-xl text-sm justify-center ">
+              <div class="text-white font-bold">Anthony Montalbano</div>
+              <div class="text-gray-400">Dev/Co-founder at Betterly.ai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hold our Hands -->
+      <div
+        class="flex space-x-4 flex-col bg_glass md:p-10 p-4 custom-border hover:scale-105 transition-all ease-in-out duration-500">
+        <div class="lg:text-5xl md:text-3xl text-xl text-center md:mt-20 mt-10">
+          <div class="text-prime font-extrabold">You don't need to</div>
+          <div class="gradient-text">hold our hands.</div>
+          <div class="text-justify text-gray-400 md:text-xl text-sm max-w-3xl mx-auto my-4">
+            Bringing on a new dev can be a pretty slow process. Explain how the code is organized. Make sure they can
+            get it running on their machine. Answer a bunch of questions.
+            We've been working with Laravel for almost as long as it has been around, and PHP over a decade before that.
+            We know the technology side of things inside and out.
+            And if you don't have a world-class README that explains how to get the project running in a few minutes,
+            we'll create that as part of our first PR. Our aim isn't just to close tickets, but to make the project and
+            team a little better overall each time.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class=" ">
+      <!-- Cards -->
+      <div class="">
+        <!-- Header Text -->
+        <div class="text-prime font-extrabold lg:text-5xl md:text-3xl text-xl text-center mt-20">No compromises <span
+            class="gradient-text">on quality.</span></div>
+        <div class="text-gray-500 text-center my-4">We've built up practices over the years that help us ship higher
+          quality code.</div>
+        <div class="stack">
+          <!-- Card -->
+          <div
+            class=" flex md:space-x-4 space-x-0 md:space-y-0 space-y-4 justify-between items-center image_animation my-8 md:flex-row flex-col">
+            <div class="md:w-1/2 w-full h-96"><img src="/src/assets/images/1.png" alt=""
+                class="w-full h-full object-contain object-center rounded-md"></div>
+            <div class="flex flex-col md:w-1/2 w-full">
+              <div class="text-white font-bold text-3xl">Testing</div>
+              <div class="line-clamp-7 text-gray-500 md:text-xl text-sm text-justify">Maybe your team doesn't write
+                tests? Or maybe they want to start, but haven't figured it out yet? Either way, it's non-negotiable for
+                us. Our code will come with tests. And we'll add in the pieces that make testing easier, like factories
+                and other test helpers. Your team might just pick up on what we're doing and start writing tests for
+                their code too. We've seen it happen!</div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div
+            class=" flex md:space-x-4 space-x-0 md:space-y-0 space-y-4 justify-between items-center image_animation my-8 md:flex-row flex-col">
+            <div class="md:w-1/2 w-full h-96"><img src="/src/assets/images/2.png" alt=""
+                class="w-full h-full object-contain object-center rounded-md"></div>
+            <div class="flex flex-col md:w-1/2 w-full">
+              <div class="text-white font-bold text-3xl">Documentation</div>
+              <div class="line-clamp-7 text-gray-500 md:text-xl text-sm text-justify">We get a sinking feeling when we
+                open some Laravel project and the README is still the default Laravel install README. We won't do that
+                to you. We'll create an onboarding README if none exists, which future devs who join your team will
+                benefit from. Anything new we build will be internally documented, and higher level docs will be created
+                as needed. All pull requests will come with context: Why did we do X instead of Y? What are some things
+                you need to know when reviewing the code?!</div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div
+            class=" flex md:space-x-4 space-x-0 md:space-y-0 space-y-4 justify-between items-center image_animation my-8 md:flex-row flex-col">
+            <div class="md:w-1/2 w-full h-96"><img src="/src/assets/images/3.png" alt=""
+                class="w-full h-full object-contain object-center rounded-md"></div>
+            <div class="flex flex-col md:w-1/2 w-full">
+              <div class="text-white font-bold text-3xl">Architecture</div>
+              <div class="line-clamp-7 text-gray-500 md:text-xl text-sm text-justify">It's common for teams to build up
+                technical debt over the years in a long-lived application. We chip away at that technical debt with
+                every feature we work on. It's just part of how we work. Neither of us were Boy Scouts, but we really
+                believe in the adage of “leaving something a little better than how you found it”. After a few months of
+                working with us, this will really pay off in the overall quality of your application.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review -->
+      <div class="flex md:space-x-4 space-x-0 md:my-40 my-20 md:flex-row flex-col">
+        <div class="md:w-1/5 w-full flex justify-center items-center"><img src="/src/assets/images/quote-UWYCf-2H.svg"
+            alt="" class="w-20 h-20"></div>
+        <div class="md:w-4/5 w-full flex flex-col space-y-4 border-l-2 border-[#087DC4] md:px-10 px-2">
+          <div class="line-clamp-4 md:text-xl text-sm text-gray-400 text-justify">To be honest, we weren't exactly sure
+            what to expect, but Joel and Aaron provided a tremendous amount of value. Their years of industry knowledge
+            in the Laravel world is impressive and our team is excited to take what we learned and continue to build our
+            platform.</div>
+          <div class="flex space-x-4">
+            <div><img src="src/assets/images/anthony-blGeGDqd.jpg" alt=""
+                class="md:w-20 w-10 h-10 md:h-20 rounded-full"></div>
+            <div class="flex flex-col space-y-1 md:text-xl text-sm justify-center ">
+              <div class="text-white font-bold">Anthony Montalbano</div>
+              <div class="text-gray-400">Dev/Co-founder at Betterly.ai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="" <-- Buy -->
+      <!-- Header Text -->
+      <div class="text-prime font-extrabold lg:text-5xl md:text-3xl text-xl text-center mt-20">Hiring two experts costs
+        less <span class="gradient-text">than you might think.</span></div>
+      <div
+        class="flex md:flex-row flex-col md:space-x-4 space-x-0 md:space-y-0 space-y-4 justify-center items-center my-10">
+        <!-- Card -->
+        <div class="bg_glass p-4 md:w-1/2 w-full relative custom-border ">
+          <div class="card">
+            <div class="flex justify-between text-white text-xl">
+              <div>Starter</div>
+              <div><i class="fa-regular fa-star"></i></div>
+            </div>
+            <div class="text-5xl font-extrabold gradient-text">$7,500<span class="text-sm">/month</span></div>
+            <div class=" text-gray-400">(We're not going to insult you with $7,499)</div>
+            <div>
+              <ul class="text-xl text-gray-400 my-8 space-y-3">
+                <li><span class="mr-2 gradient-text"><i class="fa-solid fa-star"></i></span><span
+                    class="text-2xl font-semibold text-white">One</span> concurrent request</li>
+                <li><span class="mr-2 gradient-text"><i class="fa-solid fa-star"></i></span>Turnaround time in days, not
+                  weeks</li>
+                <li><span class="mr-2 gradient-text"><i class="fa-solid fa-star"></i></span>Pay by credit card or ACH
+                </li>
+                <li><span class="mr-2 gradient-text"><i class="fa-solid fa-star"></i></span>Pause or cancel anytime in
+                  less than a minute</li>
+              </ul>
+            </div>
+            <div class="w-full"><button
+                class="gradient-btn w-full py-4 rounded-lg text-xl transition-all ease-in-out duration-700">Get
+                started</button></div>
+          </div>
+        </div>
+        <!-- Card -->
+        <div class="bg_glass p-4 md:w-1/2 w-full  custom-border relative ">
+          <div class="card">
+            <div class="flex justify-between text-white text-xl">
+              <div>Diamond</div>
+              <div><i class="fa-regular fa-gem"></i></div>
+            </div>
+            <div class="text-5xl font-extrabold gradient-text2">$13,500 <span class="text-sm">/month</span></div>
+            <div class=" text-gray-400">(We're not going to insult you with $13,499)</div>
+            <div>
+              <ul class="text-xl text-gray-400 my-8 space-y-3">
+                <li><span class="mr-2 gradient-text2"><i class="fa-solid fa-gem"></i></span><span
+                    class="text-2xl font-semibold text-white">Two</span> concurrent request</li>
+                <li><span class="mr-2 gradient-text2"><i class="fa-solid fa-gem"></i></span>Turnaround time in days, not
+                  weeks</li>
+                <li><span class="mr-2 gradient-text2"><i class="fa-solid fa-gem"></i></span>Pay by credit card or ACH
+                </li>
+                <li><span class="mr-2 gradient-text2"><i class="fa-solid fa-gem"></i></span>Pause or cancel anytime in
+                  less than a minute</li>
+              </ul>
+            </div>
+            <div class="w-full"><button
+                class="gradient-btn2 w-full py-4 rounded-lg text-xl transition-all ease-in-out duration-700">Get
+                started</button></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="">
+      <!-- FAQ -->
+      <div class="faq-container md:my-20 my-10 text-white">
+        <!-- Q1 -->
+        <div
+          class="bg_glass p-4 faq-question custom-border transition-all ease-in-out duration-700 hover:scale-105 my-4">
+          <div class=" cursor-pointer mb-4 text-xl gradient-text" onclick="toggleAnswer('faq1')">What is Lorem Ipsum?
+          </div>
+          <div id="faq1" class="faq-answer text-md ">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, quasi sit, aspernatur ea excepturi placeat
+            dolorem quae earum quas non nesciunt error, quos exercitationem rerum incidunt unde asperiores veritatis
+            laborum? Porro, soluta qui sit est aut voluptatem. Officia inventore officiis eligendi et architecto
+            aspernatur placeat rerum ad culpa eum deleniti omnis, reiciendis aut odio doloribus voluptatibus
+            praesentium, quae excepturi tempora sit illum magnam soluta. In a doloremque adipisci culpa quod illum unde
+            suscipit consectetur hic, numquam id, et corporis maiores blanditiis accusamus itaque sit, aspernatur
+            expedita error? Minima aut ipsam quia est quidem minus reprehenderit! Voluptatibus esse veritatis impedit
+            facilis?
+          </div>
+        </div>
+        <!-- Q2 -->
+        <div
+          class="bg_glass p-4 faq-question custom-border transition-all ease-in-out duration-700 hover:scale-105 my-4">
+          <div class=" cursor-pointer mb-4 text-xl gradient-text" onclick="toggleAnswer('faq2')">What is Lorem Ipsum?
+          </div>
+          <div id="faq2" class="faq-answer text-md ">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda at id, praesentium facere deleniti
+            accusantium mollitia. Quasi voluptas nulla nobis velit rerum accusantium corporis amet ea consequatur,
+            architecto suscipit perferendis repellat eius consequuntur asperiores ducimus quod dolores, omnis beatae
+            dolor quas! Voluptatem, quia voluptate? Dolores et architecto iure harum cumque?
+          </div>
+        </div>
+        <!-- Q3 -->
+        <div
+          class="bg_glass p-4 faq-question custom-border transition-all ease-in-out duration-700 hover:scale-105 my-4">
+          <div class=" cursor-pointer mb-4 text-xl gradient-text" onclick="toggleAnswer('faq3')">What is Lorem Ipsum?
+          </div>
+          <div id="faq3" class="faq-answer text-md ">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda at id, praesentium facere deleniti
+            accusantium mollitia. Quasi voluptas nulla nobis velit rerum accusantium corporis amet ea consequatur,
+            architecto suscipit perferendis repellat eius consequuntur asperiores ducimus quod dolores, omnis beatae
+            dolor quas! Voluptatem, quia voluptate? Dolores et architecto iure harum cumque?
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <!-- Footer -->
+  <div class="bg-prime p-4">
+    <footer class="flex justify-between items-center py-10 max-w-5xl mx-auto md:flex-row flex-col">
+      <!-- Logo and details -->
+      <div class="flex flex-col justify-center items-center text-white text-sm space-y-2 text-center">
+        <div class="flex justify-center items-center">
+          <a href="/"><img src="/src/assets/images/download.svg" alt=""
+              class="w-10 hover:scale-110 transition-all ease-in-out duration-700  overflow-hidden"></a>
+        </div>
+        <div class="">Address , House#14, Road# 7-1, Block- H, </div>
+        <div>Rampura, Dhaka</div>
+        <div class=""><span><i class="fa-solid fa-phone"></i></span> 01973744366, 01716-077014</div>
+        <div class=""><span><i class="fa-solid fa-envelope"></i></span> pigeon744366@gmail.com</div>
+        <!-- <div class=""><span><i class="fa-solid fa-globe"></i></span> www.pigeonprem.com</div> -->
+      </div>
+      <!-- Terms & Socials -->
+      <div class="md:mt-0 mt-10">
+        <ul class="uppercase flex flex-col  space-y-4  text-gray-200 text-xs ">
+          <li class=""><a href="" class="hover:text-blue-500">TERMS & CONDITIONS </a></li>
+          <li class=""><a href="" class="hover:text-blue-500"> PRIVACY POLICY</a></li>
+        </ul>
+        <ul class="uppercase flex flex-wrap  space-x-2  text-gray-400 text-3xl">
+          <li class="mt-4"><a href="https://www.facebook.com/pigeoncommunicationltd"
+              class="hover:text-blue-500 transition-all ease-in-out duration-700 "><i
+                class="fa-brands fa-square-facebook"></i></a></li>
+          <li class="mt-4"><a href="" class="hover:text-blue-500 transition-all ease-in-out duration-700 "><i
+                class="fa-brands fa-square-instagram"></i></a></li>
+          <li class="mt-4"><a href="https://www.youtube.com/@pigeoncommunication8762"
+              class="hover:text-blue-500 transition-all ease-in-out duration-700 "><i
+                class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+
+  <script src="src/js/index.js"></script>
+</body>
+
+</html>
